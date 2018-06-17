@@ -1,0 +1,31 @@
+
+[app]
+name = 'MTS Log Processor'
+
+[mts]
+
+line_pattern = '\((.*)\) (\w+) \[(.*)\] (.*)'
+
+states = ['init', 'idle', 'run', 'stop', 'error', 'hold']
+
+[mts.transitions]
+conf_dict = 'mts_transitions.py'
+
+[redis]
+host = '127.0.0.1'
+port = '4397'
+user = 'mabo'
+password = 'mabo2017'
+
+lua_script = 'enque.lua'
+
+
+[influxdb]
+host = '127.0.0.1'
+port = '8083'
+user = 'mabo'
+password = 'mabo2017'
+
+[logging]
+conf_dict = 'logging.json'
+
